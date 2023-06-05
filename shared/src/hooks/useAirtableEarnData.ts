@@ -321,7 +321,7 @@ export const useAirtableEarnData = (vaultOption: VaultOptions) => {
       values.strikePrice * (1 + values.upperBarrierPercentage);
 
     // calculate the average weekly performance of vault
-    let avgPerformanceArray: number[] = [];
+    const avgPerformanceArray: number[] = [];
     itmRecords.forEach((record: any) => {
       avgPerformanceArray.push(
         Math.abs(

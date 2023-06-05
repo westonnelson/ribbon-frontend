@@ -8,7 +8,7 @@ import { useWeb3Context } from "./web3Context";
 export const getVault = (
   library: any,
   vaultOption: VaultOptions,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   if (!VaultAddressMap[vaultOption].v1) {
     return null;

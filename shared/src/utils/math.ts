@@ -11,7 +11,7 @@ const { formatUnits } = ethers.utils;
 
 export const formatSignificantDecimals = (
   num: string,
-  significantDecimals: number = 6
+  significantDecimals = 6
 ) => parseFloat(parseFloat(num).toFixed(significantDecimals)).toString();
 
 /**
@@ -59,7 +59,7 @@ export const formatAmount = (
 
 export const formatBigNumber = (
   num: BigNumberish,
-  decimals: number = 18,
+  decimals = 18,
   significantDecimals?: number
 ) => {
   const _significantDecimals =
@@ -72,14 +72,14 @@ export const formatBigNumber = (
 
 export const formatBigNumberAmount = (
   num: BigNumber,
-  decimals: number = 18
+  decimals = 18
 ) => {
   return formatAmount(parseFloat(formatUnits(num, decimals)));
 };
 
 export const formatBigNumberFloat = (
   num: BigNumberish,
-  decimals: number = 18,
+  decimals = 18,
   significantDecimals?: number
 ) => {
   const _significantDecimals =
@@ -99,14 +99,14 @@ export const toFiat = (etherVal: BigNumber) => {
 export const toUSD = (bn: BigNumber) =>
   Math.floor(parseFloat(ethers.utils.formatEther(bn))).toLocaleString();
 
-export const toETH = (bn: BigNumber, precision: number = 4) =>
+export const toETH = (bn: BigNumber, precision = 4) =>
   parseFloat(ethers.utils.formatEther(bn)).toFixed(precision);
 
 export const assetToFiat = (
   num: BigNumber | number,
   assetPrice: number,
-  assetDecimal: number = 18,
-  precision: number = 2
+  assetDecimal = 18,
+  precision = 2
 ): string =>
   (isBigNumberish(num)
     ? parseFloat(ethers.utils.formatUnits(num, assetDecimal)) * assetPrice
@@ -116,15 +116,15 @@ export const assetToFiat = (
 export const assetToUSD = (
   num: BigNumber | number,
   assetPrice: number,
-  assetDecimal: number = 18,
-  precision: number = 2
+  assetDecimal = 18,
+  precision = 2
 ): string =>
   currency(assetToFiat(num, assetPrice, assetDecimal, precision)).format();
 
 export const ethToUSD = (
   num: BigNumber | number,
   ethPrice: number,
-  precision: number = 2
+  precision = 2
 ): string => assetToUSD(num, ethPrice, 18, precision);
 
 // Left here for Ribbon Treasury to use
@@ -167,7 +167,7 @@ export const getRange = (start: number, stop: number, step: number) => {
   return a;
 };
 
-export const handleSmallNumber = (n: number, decimals: number = 4): number => {
+export const handleSmallNumber = (n: number, decimals = 4): number => {
   let parsedString = n.toFixed(decimals);
   if (n < 1e-6) {
     parsedString = n.toPrecision(1);
@@ -211,7 +211,7 @@ export const apyFromPricePerShare = (
 export const amountAfterSlippage = (
   num: BigNumber,
   slippage: number, // this is a float
-  decimals: number = 18
+  decimals = 18
 ) => {
   if (slippage >= 1.0) {
     throw new Error("Slippage cannot exceed 100%");

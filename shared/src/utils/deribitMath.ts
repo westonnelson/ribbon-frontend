@@ -64,7 +64,7 @@ const getStrikeAtDeltaFromDeribit = (
 
   let currentStrike = spot + 2 * step * (isPut ? -1 : 1) - (spot % step);
   let currentDelta = isPut ? -1 : 1;
-  let last2Strikes: Option[] = [];
+  const last2Strikes: Option[] = [];
   if (!options[currentStrike]) {
     throw new Error("Options chain not fully loaded");
   }
@@ -116,7 +116,7 @@ const linearlyInterpolateOptionChain = (
   options: Record<number, Option>,
   step: number
 ): Record<number, Option> => {
-  let newOptions = { ...options };
+  const newOptions = { ...options };
   const strikes = Object.keys(options)
     .map((s) => parseInt(s))
     .sort();

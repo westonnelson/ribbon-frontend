@@ -22,7 +22,7 @@ const useStrikePrice = (
   const optionAsset = getOptionAssets(vaultOption);
 
   const strikePrice = useCallback(
-    (formatted: boolean = true) => {
+    (formatted = true) => {
       const chain = getVaultChain(vaultOption);
 
       if (!currentOption) return "---";
@@ -40,7 +40,7 @@ const useStrikePrice = (
   );
 
   const currentPrice = useCallback(
-    (formatted: boolean = true) => {
+    (formatted = true) => {
       if (prices[optionAsset].loading) return loadingText;
 
       if (formatted) {

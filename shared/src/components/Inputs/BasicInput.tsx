@@ -59,7 +59,7 @@ const BasicInput: React.FC<BasicInputProps> = ({
   leftContent,
 }) => {
   const sizeSpecificProps = useMemo(() => {
-    let props = {
+    const props = {
       containerHeight: "48px",
       fontSize: "16px",
       lineHeight: 24,

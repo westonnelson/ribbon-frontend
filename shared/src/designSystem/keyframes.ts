@@ -1,6 +1,6 @@
 import { keyframes } from "styled-components";
 
-export const shimmerKeyframe = (color: string = "rgba(0,0,0,0)") => keyframes`
+export const shimmerKeyframe = (color = "rgba(0,0,0,0)") => keyframes`
     0% {
         box-shadow: ${color}66 0px 0px 70px;
     }

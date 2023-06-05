@@ -11,7 +11,7 @@ import { useETHWeb3Context } from "./web3Context";
 
 export const getLiquidityTokenMinter = (
   library: any,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   const provider = useSigner ? library.getSigner() : library;
 

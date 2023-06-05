@@ -531,7 +531,7 @@ const YieldCard: React.FC<YieldCardProps> = ({
   }, [decimals, deposits, v2Deposits, v2VaultLimit, vaultLimit, vaultVersion]);
 
   const displayRange = useCallback(
-    (isLeft: boolean = true, strike: number, current: number) => {
+    (isLeft = true, strike: number, current: number) => {
       const OTM = isPutVault(vault) ? strike < current : current > strike;
 
       if (priceLoading) return false;
@@ -679,7 +679,7 @@ const YieldCard: React.FC<YieldCardProps> = ({
         <EarnCard
           vaultOption={vault}
           color={color}
-          height={!!account ? 447 : 504}
+          height={account ? 447 : 504}
           asset={asset}
         />
         {!isVIP() && (

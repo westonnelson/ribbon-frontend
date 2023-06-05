@@ -250,7 +250,7 @@ export const Chart: React.FC<{
   const getData = useCallback(
     (canvas: any) => {
       const ctx = canvas.getContext("2d");
-      let gradient = ctx.createLinearGradient(0, 0, 0, 250);
+      const gradient = ctx.createLinearGradient(0, 0, 0, 250);
       gradient.addColorStop(0, gradientStartColor);
       gradient.addColorStop(1, gradientStopColor);
 

@@ -10,7 +10,7 @@ export const getERC20Token = (
   library: any,
   token: ERC20Token,
   chainId: number,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   const address = getERC20TokenAddress(token, chainId);
   if (library && address) {

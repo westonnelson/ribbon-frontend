@@ -178,7 +178,7 @@ const EarnCard: React.FC<AssetCircleContainerProps> = ({
   vaultOption,
 }) => {
   const Logo = getAssetLogo(asset);
-  let logo = <Logo height={"100%"} />;
+  const logo = <Logo height={"100%"} />;
 
   const feColorMatrix = getEarnVaultFeColorMatrix(vaultOption);
   return (

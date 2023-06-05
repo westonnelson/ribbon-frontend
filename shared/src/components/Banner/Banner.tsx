@@ -39,7 +39,7 @@ interface BannerProps {
   linkText?: string;
   blink?: boolean;
   onClick?: () => void;
-  linkOpensNewTab?: Boolean;
+  linkOpensNewTab?: boolean;
 }
 
 const Banner: React.FC<BannerProps> = ({

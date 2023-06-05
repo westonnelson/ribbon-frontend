@@ -7,7 +7,7 @@ import { isProduction } from "../utils/env";
 import { useETHWeb3Context } from "./web3Context";
 import { Web3DataContext } from "./web3DataContext";
 
-export const getLidoOracle = (library: any, useSigner: boolean = true) => {
+export const getLidoOracle = (library: any, useSigner = true) => {
   if (!LidoOracleAddress) {
     return null;
   }

@@ -27,7 +27,7 @@ const useLidoCurvePool = () => {
   // amountETH is eth in 18 decimals
   // slippage is number between 0-1, 1 being 100% slippage
   const getMinSTETHAmount = useCallback(
-    async (amountETH: BigNumber, slippage: number = 0.005) => {
+    async (amountETH: BigNumber, slippage = 0.005) => {
       if (lidoCurvePool) {
         // 1. Get steth rate
         const stETHAmount = await lidoCurvePool.get_dy(0, 1, amountETH, {

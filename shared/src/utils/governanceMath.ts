@@ -134,7 +134,7 @@ export const calculateBoostMultiplier = ({
   veRBNAmount,
   totalVeRBN,
 }: BoostMultiplierCalculationProps) => {
-  let l = Number(gaugeBalance.toString());
+  const l = Number(gaugeBalance.toString());
   const L = Number(poolLiquidity.toString()) + l;
   const veRBNAmt = parseFloat(formatUnits(veRBNAmount, 18));
   const totalVeRBNAmt = parseFloat(formatUnits(totalVeRBN, 18));
@@ -148,10 +148,10 @@ export const calculateBoostMultiplier = ({
     (((L * veRBNAmt) / totalVeRBNAmt) * (100 - TOKENLESS_PRODUCTION)) / 100;
   lim = Math.min(l, lim);
 
-  let old_bal = workingBalanceAmt;
-  let noboost_lim = (TOKENLESS_PRODUCTION * l) / 100;
-  let noboost_supply = workingSupplyAmt + noboost_lim - old_bal;
-  let _working_supply = workingSupplyAmt + lim - old_bal;
+  const old_bal = workingBalanceAmt;
+  const noboost_lim = (TOKENLESS_PRODUCTION * l) / 100;
+  const noboost_supply = workingSupplyAmt + noboost_lim - old_bal;
+  const _working_supply = workingSupplyAmt + lim - old_bal;
 
   return lim / _working_supply / (noboost_lim / noboost_supply);
 };

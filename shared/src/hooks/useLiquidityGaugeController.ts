@@ -8,7 +8,7 @@ import { useWeb3Context } from "./web3Context";
 
 export const getLiquidityGaugeController = (
   library: any,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   const provider = useSigner ? library.getSigner() : library;
 

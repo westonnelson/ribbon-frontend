@@ -9,7 +9,7 @@ import { useETHWeb3Context } from "./web3Context";
 export const getLiquidityGaugeV5 = (
   library: any,
   vaultOption: VaultOptions,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   const provider = useSigner ? library.getSigner() : library;
 

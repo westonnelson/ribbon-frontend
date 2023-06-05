@@ -12,7 +12,7 @@ import { useWeb3Context } from "./web3Context";
 export const getStakingReward = (
   library: any,
   vaultOption: StakingVaultOptions,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   const provider = useSigner ? library.getSigner() : library;
 

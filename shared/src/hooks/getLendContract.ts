@@ -3,7 +3,7 @@ import { RibbonLendVault__factory } from "../codegen/factories/RibbonLendVault__
 export const getLendContract = (
   library: any,
   pool: string,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   const provider = useSigner ? library.getSigner() : library;
 

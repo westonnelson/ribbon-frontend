@@ -3,7 +3,7 @@ import { StrikeSelection__factory } from "../codegen/factories/StrikeSelection__
 export const getStrikeSelectionContract = (
   library: any,
   address: string,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   const provider = useSigner ? library.getSigner() : library;
   return StrikeSelection__factory.connect(address, provider);

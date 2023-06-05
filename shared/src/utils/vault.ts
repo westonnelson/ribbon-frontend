@@ -22,7 +22,7 @@ export const isVaultFull = (
 export const isVaultSupportedOnChain = (
   vaultOption: VaultOptions,
   chainId: number
-): Boolean => {
+): boolean => {
   return VaultAddressMap[vaultOption].chainId === chainId;
 };
 

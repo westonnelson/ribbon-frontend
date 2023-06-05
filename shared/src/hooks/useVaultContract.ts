@@ -19,7 +19,7 @@ import { useWeb3Context } from "./web3Context";
 export const getVaultContract = (
   library: any,
   vaultOption: VaultOptions,
-  useSigner: boolean = true
+  useSigner = true
 ) => {
   if (!VaultAddressMap[vaultOption].v2 && !VaultAddressMap[vaultOption].earn) {
     return null;
